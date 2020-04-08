@@ -1,0 +1,1 @@
+web: gunicorn AirTrafficManagement.wsgi --log-file -

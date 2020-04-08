@@ -1,0 +1,50 @@
+{% extends 'blogs/index.html' %} {% block nav%}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Airtraffic</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/blogs"><span class="glyphicon glyphicon-hand-left"></span> Retour</a></li>
+
+        </ul>
+    </div>
+</nav>
+{% endblock %} {% block content %}
+
+<div class="container">
+    <h2>Result: {{ airlines| length}} compagnies</h2>
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <br>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname Compagnie</th>
+                <th>Contry</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% for airline in airlines%}
+            <tr>
+                <td>{{airline.id}}</td>
+                <td>{{airline.name_airline}}</td>
+                <td>{{airline.clé_contry}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+{% endblock %}
