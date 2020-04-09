@@ -25,7 +25,7 @@ SECRET_KEY = 'l+e5f$-z&iq1nk-*b3oij1-^8wt(%+iivyukp144+m))l@kwk('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['projecthamet.heruko.com']
 
 
 # Application definition
