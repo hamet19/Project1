@@ -1,0 +1,19 @@
+{% extends 'blogs/index.html' %} {% block nav%} {% load static %} {% load crispy_forms_tags %}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Airtraffic</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+        </ul>
+
+    </div>
+</nav>
+{% endblock %} {% block content %}
+<form method="post" class="from-group">
+    {% csrf_token %} {{form|crispy}}
+    <p>Don't have an accoount? Create one <a href="/register">here</a></p>
+    <button type="submit" class="btn btn-success">Login</button>
+</form>
+{% endblock %}

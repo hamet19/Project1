@@ -25,10 +25,17 @@
                 <div class="menu_nav">
                     <ul>
                         <li class="active"><a href=""><span>Home Page</span></a></li>
+                        {% if user.is_authenticated %}
+
                         <li><a href="/about"><span>About Us</span></a></li>
                         <li><a href="/blogs"><span>Blog</span></a></li>
                         <li><a href="/contact"><span>Contact Us</span></a></li>
+                        <li><a href="/logout"><span>Logout</span></a></li>
                         <li><a href="/admin"><span>Admin</span></a></li>
+                        {% else %}
+                        <li><a href="/login"><span>login</span></a></li>
+                        <li style="margin-left: inherit;"><a href="/register"><span>Register</span></a></listyle="margin-left: auto;">
+                            {% endif %}
                     </ul>
                 </div>
                 <div class="clr"></div>

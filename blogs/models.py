@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Contry(models.Model):
     name_contry=models.CharField(max_length=50)
     def __str__(self):
@@ -22,7 +23,8 @@ class Aeroport(models.Model):
     # timezone2=models.IntegerField()
     clé_city=models.ForeignKey(City,on_delete=models.CASCADE)
     clé_contry=models.ForeignKey(Contry,on_delete=models.CASCADE)
-
+    def __str__(self):
+      return self.name_aeroport
     
     
 class Airline(models.Model):
